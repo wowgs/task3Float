@@ -12,7 +12,7 @@ int main()
     scanf("%f",&number);
     u.f = number;
 
-    int sign = u.i >> 31 &1;
+    int sign = u.i >> 31 & 1;
     int exp = u.i >> 23 & 0xff;
     int m = u.i & (0x7fffff);
 
@@ -30,7 +30,7 @@ int main()
     }
     else
     {
-        printf("%5d %28c%-d\n",sign,' ',exp-127);
+        printf("%5d %29c%-d\n",sign,' ',exp-127);
         printf("(-1) * 1.");
         for (i = 22; i > 0; i--)
         {
