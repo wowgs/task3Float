@@ -34,7 +34,7 @@ int main()
         printf("(-1) * 1.");
         for (i = 22; i > 0; i--)
         {
-            printf("%d", (m >> i)& 1);
+            printf("%d", (m >> i) & 1);
         }
         printf(" * 2");
 
