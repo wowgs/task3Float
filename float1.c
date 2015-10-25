@@ -9,7 +9,7 @@ int main()
     float number;
 
     union floatInt u;
-    scanf("%f",&number);
+    scanf("%f", &number);
     u.f = number;
 
     int sign = u.i >> 31 & 1;
@@ -30,7 +30,7 @@ int main()
     }
     else
     {
-        printf("%5d %29c%-d\n",sign,' ',exp-127);
+        printf("%5d %29c%-d\n", sign, ' ', exp-127);
         printf("(-1) * 1.");
         for (i = 22; i > 0; i--)
         {
