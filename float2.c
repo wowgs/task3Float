@@ -26,7 +26,7 @@ int main()
 
     if (exp == 0xff)
     {
-        if (m = 0)
+        if (m == 0)
         {
             printf((sign ? "-inf" : "+inf"));
         }
