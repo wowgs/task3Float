@@ -3,7 +3,7 @@ int main()
     int i = 0;
     float number;
 
-    scanf("%f",&number);
+    scanf("%f", &number);
 
     int *f = (int*)&number;
 
@@ -25,11 +25,11 @@ int main()
     }
     else
     {
-        printf("%5d %29c%-d\n",sign,' ',exp-127);
+        printf("%5d %29c%-d\n", sign, ' ', exp-127);
         printf("(-1) * 1.");
         for (i = 22; i > 0; i--)
         {
-            printf("%d", (m >> i)& 1);
+            printf("%d", (m >> i) & 1);
         }
         printf(" * 2");
 
