@@ -146,11 +146,11 @@ int main()
                 j++;
             break;
 
-            case 'ring':
+            case 'n':
                createRing(&head,&last);
             break;
 
-            case 'test':
+            case 't':
                cheackRing(head);
             break;
 
