@@ -1,4 +1,5 @@
-union floatInt{
+union floatInt
+{
     unsigned int i;
     float f;
 };
