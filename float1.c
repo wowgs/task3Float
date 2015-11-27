@@ -1,3 +1,4 @@
+#include <stdio.h>
 union floatInt
 {
     unsigned int i;
