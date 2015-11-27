@@ -14,5 +14,5 @@ int main()
         scanf("%s", s);
         add(hashTable, s);
     }
-    countString(table);
+    countString(hashTable);
 }
