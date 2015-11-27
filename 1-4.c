@@ -25,6 +25,7 @@ size_t strctt(char *dst, char *src)
           }
           dst[i] = '\0';
   }
+  
 
 size_t strcpy(char *dst, char *src)
   {
