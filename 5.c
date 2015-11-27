@@ -7,11 +7,12 @@ int main()
     HashTable hashTable = createHashTable();
     int i;
     int n;
+    char s[1000];
     printf("Please, enter your n = ");
     scanf("%d", &n);
     for(i = 0; i < n; i++)
     {
-        scanf("%s", s);
+        scanf("%s", &s);
         add(hashTable, s);
     }
     countString(hashTable);
