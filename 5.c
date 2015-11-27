@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "hashTable.h"
+
 int main()
 {
     HashTable hashTable = createHashTable();
