@@ -8,7 +8,6 @@ int main()
     int n;
     printf("Please, enter your n = ");
     scanf("%d", &n);
-
     for (i = 0; i < n; i++)
     {
         scanf("%s", &s1);
