@@ -11,6 +11,7 @@ void sortCount(int *data, int size)
     if (count == NULL)
     {
         printf("malloc failed\n");
+        return;
     }
 
     for (i = 0; i < max; i++)
@@ -95,13 +96,16 @@ void sortMerge(int *data, int size)
     if (down == NULL)
     {
         printf("malloc failed\n");
+        return;
     }
     data = mergeSort(data, down, 0, size);
+    free(down);
 }
+
 
 int main()
 {
-    int n=100000000;
+    int n = 100000000;
     int *data;
     data = (int*)malloc(n * sizeof(int));
     if (data == NULL)
@@ -136,3 +140,4 @@ int main()
 	1M  	0.0070 	n/a	0.2710
 	10M 	0.0620	n/a     2.8770
     	100M	0.5600	n/a     27.8780 */
+
