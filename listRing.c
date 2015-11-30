@@ -11,7 +11,7 @@ void createRing(node **head, node **last)
     (*last)->next=(*head);
 }
 
-void cheackRing(node *head)
+void checkRing(node *head)
 {
     node *p1;
     node *p2;
@@ -49,6 +49,11 @@ void cheackRing(node *head)
 void add(node **head, node **last, int val)
 {
     node *tmp = (node*) malloc(sizeof(node));
+    if (tmp == NULL)
+    {
+        printf("malloc failed\n");
+        return;
+    }
     tmp->data = val;
 
     if(*head == NULL)
@@ -92,6 +97,7 @@ void rem(node **head, int val)
             cur = cur->next;
         }
     }
+    free(cur);
 }
 
 
@@ -151,7 +157,7 @@ int main()
             break;
 
             case 't':
-               cheackRing(head);
+               checkRing(head);
             break;
 
         }
