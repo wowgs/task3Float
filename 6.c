@@ -18,6 +18,6 @@ int main()
     }
     for(i = 0; arr[i] !=0; i++)
     {
-      printf("%c", arr[i]);
+      printf("%s", arr);
     }
 }
