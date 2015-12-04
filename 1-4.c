@@ -17,13 +17,13 @@ size_t strctt(char *dst, char *src)
       {
           i++;
       }
-          while(dst[j]!= '\0')
-          {
-              dst[i] = src[j];
-              i++;
-              j++;
-          }
-          dst[i] = '\0';
+      while(dst[j]!= '\0')
+      {
+          dst[i] = src[j];
+          i++;
+          j++;
+      }
+      dst[i] = '\0';
   }
   
 
