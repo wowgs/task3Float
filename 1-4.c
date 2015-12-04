@@ -1,7 +1,7 @@
 #include <stdio.h>
 size_t strlen(char *src)
 {
-    int count = 0;
+    size_t count = 0;
     while (src[count] != '\0')
     {
         count++;
