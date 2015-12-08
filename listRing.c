@@ -88,7 +88,8 @@ void rem(node **head, int val)
             {
                 *head = cur->next;
             }
-            cur = NULL;
+            free(cur);
+            return;
         }
 
         else
@@ -97,7 +98,6 @@ void rem(node **head, int val)
             cur = cur->next;
         }
     }
-    free(cur);
 }
 
 
@@ -117,7 +117,7 @@ void quit(node *head)
     while (head != NULL)
     {
         tmp = head;
-        head =(head)->next;
+        head =head->next;
         free(tmp);
     }
 }
