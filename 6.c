@@ -16,5 +16,5 @@ int main()
             arr[j] = arr[j] ^ (int)s1[j];
         }
     }
-      printf("%s", arr);
+    printf("%s", arr);
 }
