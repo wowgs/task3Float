@@ -125,6 +125,7 @@ int main()
 
     begin = clock();
     sortCount(data,n);
+    free(data);
     delta  = (clock() - begin);
     printf("time: %.4f", (double)delta/CLOCKS_PER_SEC);
 
