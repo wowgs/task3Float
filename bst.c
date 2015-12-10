@@ -4,7 +4,7 @@ typedef struct binTree
     int data;
     struct binTree *left;
     struct binTree *right;
-}binTree;
+} binTree;
 
 binTree* newBinTree(int value)
 {
@@ -25,11 +25,11 @@ binTree* newBinTree(int value)
     {
        return newBinTree(value);
     }
-    if (root->data < value)
+    else if (root->data < value)
     {
         root->right = addElement(root->right, value);
     }
-    if (root->data > value)
+    else if (root->data > value)
     {
         root->left= addElement(root->left, value);
     }
@@ -40,11 +40,10 @@ binTree *min (binTree *root)
 {
     if (root->left)
     {
-        min(root->left);
+        root = min(root->left);
     }
     return root;
 }
-
 
 binTree* removeElement (binTree *root, int value)
 {
@@ -53,38 +52,39 @@ binTree* removeElement (binTree *root, int value)
         printf("ERROR: %d doesn't belong to set", value);
         return NULL;
     }
-    if (root->data > value)
+    if (root->data < value)
     {
         root->right = removeElement(root->right, value);
     }
-    else  if (root->data < value)
+    else  if (root->data > value)
     {
         root->left = removeElement(root->left, value);
     }
     else
     {
-        if(!(root->right) && !(root->left))
-        {
-            return NULL;
-        }
-        else if (root->right)
-        {
-            binTree *cur = root->right;
-            free(root);
-            return(cur);
-        }
-         else if (root->left)
-        {
-            binTree *cur = root->left;
-            free(root);
-            return(cur);
-        }
-        else
+        if ((root->right) && (root->left))
         {
             binTree *rightMin = min(root->right);
             root->data = rightMin->data;
             root->right = removeElement(root->right,rightMin->data);
             return root;
+        }
+        else if (root->right)
+        {
+            binTree *cur = root->right;
+            free(root);
+            return cur;
+        }
+        else if (root->left)
+        {
+            binTree *cur = root->left;
+            free(root);
+            return cur;
+        }
+        else
+        {
+            free (root);
+            return NULL;
         }
     }
     return root;
@@ -92,17 +92,16 @@ binTree* removeElement (binTree *root, int value)
 
 void findElement(binTree *root, int value)
 {
-
     if (root == NULL)
     {
         printf("%d doesn't belong to set\n", value);
         return;
     }
-    if (root->data > value)
+    if (root->data < value)
     {
         findElement(root->right, value);
     }
-    else if (root->data < value)
+    else if (root->data > value)
     {
         findElement(root->left, value);
     }
@@ -165,14 +164,14 @@ void print(binTree *root)
     }
 }
 
-void quit(binTree *root)
+void freeTable(binTree *root)
 {
     if (root == NULL)
     {
     return;
     }
-    quit(root->left);
-    quit(root->right);
+    freeTable(root->left);
+    freeTable(root->right);
     free(root);
     return;
 }
@@ -212,7 +211,7 @@ int main ()
                 printf("\n");
             break;
             case 'q':
-                quit(root);
+                freeTable(root);
                 j = 1;
             break;
         }
