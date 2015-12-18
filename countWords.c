@@ -73,7 +73,7 @@ int hashGood(HashTable *hashTable, char *st)
 HashTable *createTable(long long (*hashFunc)(HashTable*, char*), int size)
 {
     HashTable *newTable;
-    newTable = (node**)malloc(sizeof(node*) * size);
+    newTable = (HashTable*)malloc(sizeof(HashTable));
     if (newTable == NULL)
     {
         printf("malloc failed");
