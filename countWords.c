@@ -306,7 +306,7 @@ void textAnalyzer(HashTable *hashTable)
         {
             if (get(hashTable, rez))
             {
-               set(hashTable, rez, get(hashTable,rez)+1);
+               set(hashTable, rez, get(hashTable,rez) + 1);
             }
             else
             {
